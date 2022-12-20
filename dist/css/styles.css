@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  box-shadow: 2px 2px 2px rgb(168, 168, 168);
+}
+.container .breadcrumbs {
+  display: flex;
+  justify-content: space-between;
+}
+.container .logo {
+  width: 80px;
+  height: 80px;
+}
+.container .crumbs {
+  display: flex;
+  align-items: center;
+}
+.container ul {
+  list-style: none;
+  display: flex;
+}
+.container ul a {
+  margin-right: 35px;
+  text-decoration: none;
+  color: black;
+}
+
+.training {
+  margin-top: 20px;
+  color: #010c42;
+  display: flex;
+  justify-content: space-around;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lance {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.lance input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 35%;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.lance .siz {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.lance button {
+  display: inline-block;
+  background-color: #ffc404;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #111111;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}/*# sourceMappingURL=styles.css.map */
