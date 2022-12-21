@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/css/styles.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <!-- <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
     <title>quizz</title>
 </head>
 <body>
@@ -42,13 +43,30 @@
                 <input type="text">
             </div>
             <div>
-                <button>Start Quiz!</button>
+                <button id="btnStart">Start Quiz!</button>
+            </div>
+            <div class="question">
+                <div id="fil" class="">
+                    <div class=""><span id='counter'>1</span>/10</div>
+                    <progress id="prog" class="progr" value="1" max="10"></progress>
+                </div>
+                <p id="title"></p>
+                <form class="px-5" id="form">
+                </form>
+                <div class="btns" id="switchBtns">
+                  <button id="previous" name="button" class="inactive">Précédent</button>
+                  <button id="next" name="button">Suivante</button>
+                </div>
+              </div>
             </div>
         </div>
+        
     </section>
     <footer>
-
+ <h6>© 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved | aws.amazon.com </h6>
     </footer>
-    
+     <!-- ================== BEGIN core-js ================== -->
+                <script src="script/scripte.js"></script>
+                <script src="script/data.js"></script>
 </body>
 </html>
