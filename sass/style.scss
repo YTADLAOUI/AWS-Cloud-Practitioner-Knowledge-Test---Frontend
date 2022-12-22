@@ -3,7 +3,6 @@
 
 .container{
     box-shadow:2px 2px 2px rgb(168, 168, 168);
-
 .breadcrumbs{
     display: flex;
     justify-content: space-between;
@@ -36,7 +35,7 @@ a{
    
 }
 .lance{
-    height: 70vh;
+    height: 73vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -68,5 +67,21 @@ button{
     cursor: pointer;
     margin: 5px;
 }
+
+.question{
+//    display: none;
+.progrition{
+.count{margin-right: 10px;}
+.progr{
+    height: 40px;
+    width :300px
+}
+}
+}
+
+}
+footer{
+    display: flex;
+    justify-content: center;
 }
 
