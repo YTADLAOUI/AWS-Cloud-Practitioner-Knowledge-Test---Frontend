@@ -47,7 +47,7 @@ input{
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box ;
-    width: 35%;
+    
     border-radius: 5px;
     font-size: 18px;
 }
@@ -80,6 +80,17 @@ button{
     font-size:4.5rem;
     @include display(center);
     color: $color2
+}
+#quz{
+    @include display(center);
+    margin-left: 30px;
+}
+#prog{
+    height: 30px;
+    width: 700px;
+}
+.btns{
+    @include display(center);
 }
 }
 footer{
