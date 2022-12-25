@@ -25,7 +25,7 @@
 
 
  function countDown() {
-     for (let i = 1; i >= 0; i--) {
+     for (let i = 5; i >= 0; i--) {
          setTimeout(() => {
              document.getElementById("counter-to-start").innerText = `${i}`
              if (i === 0) {
@@ -34,7 +34,7 @@
 
                  quizStart(0);
              }
-         }, (1 - i) * 1000);
+         }, (5 - i) * 1000);
      }
  }
 

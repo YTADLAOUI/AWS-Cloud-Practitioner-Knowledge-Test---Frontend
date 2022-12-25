@@ -1,108 +1,104 @@
 @import './resets.scss';
 $color1 :#070707;
 $color2 :#ffc404;
-
-@mixin display($o){
+@mixin display($o) {
     display: flex;
     justify-content: $o;
 }
-.container{
-    box-shadow:2px 2px 2px rgb(168, 168, 168);
-.breadcrumbs{
-    @include display(space-between);
-}
-.logo{
-    width: 80px;
-    height: 80px;
-}
-.crumbs{
-    display: flex;
-    align-items: center;
-}
-ul{
-    list-style: none;
-    display: flex;
 
-a{
-    margin-right: 35px;
-    text-decoration: none;
-    color: $color1;
+.container {
+    width: 100vw;
+    box-shadow: 2px 2px 2px rgb(168, 168, 168);
+    .breadcrumbs {
+        @include display(space-between);
+    }
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+    .crumbs {
+        display: flex;
+        align-items: center;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        a {
+            margin-right: 35px;
+            text-decoration: none;
+            color: $color1;
+        }
+    }
 }
-}
-}
-.training{
+
+.training {
     @include display(space-around);
     margin-top: 20px;
     color: #041461;
     font-family: Arial, Helvetica, sans-serif;
-   
 }
-.lance{
+
+.lance {
     height: 73vh;
     width: 100%;
     @include display(center);
     align-items: center;
     flex-direction: column;
-input{
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box ;
-    
-    border-radius: 5px;
-    font-size: 18px;
-}
-.siz{
-    @include display(center);
-    width: 50%;
-}
-
-button{
-    // display: inline-block;
-    background-color: $color2;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: $color1;
-    text-align: center;
-    font-size: 13px;
-    padding: 10px;
-    width: 100px;
-    cursor: pointer;
-    margin: 5px;
-}
-#alert{
-    color: orangered;
-    font-size: 1.2rem;
-}
-.quiz{
-    font-size: 3rem;
-}
-#counter-to-start{
-    font-size:4.5rem;
-    @include display(center);
-    color: $color2
-}
-#quz{
-    @include display(center);
-    margin-left: 30px;
-}
-#title{
-    font-size: 1.1em;
-    color: blue;
-    border: 1px solid #ffc404;
-    background-color: #fdf6df;
-}
-
-#prog{
-    height: 30px;
-    width: 700px; 
-}
-.btns{
-    @include display(center);
-    
-}
+    input {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    .siz {
+        @include display(center);
+        width: 50%;
+    }
+    button {
+        // display: inline-block;
+        background-color: $color2;
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: $color1;
+        text-align: center;
+        font-size: 13px;
+        padding: 10px;
+        width: 100px;
+        cursor: pointer;
+        margin: 5px;
+    }
+    #alert {
+        color: orangered;
+        font-size: 1.2rem;
+    }
+    .quiz {
+        font-size: 3rem;
+    }
+    #counter-to-start {
+        font-size: 4.5rem;
+        @include display(center);
+        color: $color2
+    }
+    #quz {
+        @include display(center);
+        margin-left: 30px;
+    }
+    #title {
+        font-size: 1.1em;
+        color: blue;
+        border: 1px solid #ffc404;
+        background-color: #fdf6df;
+    }
+    #prog {
+        height: 30px;
+        width: 700px;
+    }
+    .btns {
+        @include display(center);
+    }
 }
 
-footer{
+footer {
     @include display(center);
 }
-

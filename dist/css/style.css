@@ -5,6 +5,7 @@
 }
 
 .container {
+  width: 100vw;
   box-shadow: 2px 2px 2px rgb(168, 168, 168);
 }
 .container .breadcrumbs {
