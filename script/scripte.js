@@ -1,17 +1,20 @@
+question.sort(function(){ return Math.random() - 0.5;});
  var valueRadio = null; //stor value
  var Name = null;
+ var numarr;
+ let array=[];
  const btnStart = document.querySelector('#btnStart');
  // console.log(btnNext)
  btnStart.addEventListener('click', quiz);
  // btnNext.addEventListener('click',quizStart);
-
  let correct = 0;
- let echac = 0;
-
+ let echac   = 0;
+ let conteur = 0;
+ let conteur1 = 0;
  function quiz() {
      var fullname = document.getElementById("Fullname").value;
      Name = fullname;
-     console.log(Name)
+     //console.log(Name)
      if (fullname === "") {
          document.getElementById("alert").innerText = `s'il vous plait Entre votre name`;
      } else {
@@ -19,10 +22,29 @@
         <article id="quz">
         <h1 class="quiz">Quiz well start in <br><span id="counter-to-start"></span></h1>
         </article>`
-         countDown();
+        // random();
+        countDown();
      }
  }
 
+//  function random(){
+//     if(conteur<=9){
+//      do {
+//          random_number = Math.floor(Math.random() * (question.length));
+//      } while (array.includes(random_number));
+
+//     //  while (array.includes(random_number)){
+//     //     random_number = Math.floor(Math.random() * (question.length));
+//     //  }
+//         array.push(random_number) ;
+//         numarr = array[conteur] ;
+//         // console.log(numarr,"variable")
+//         //  console.log(array[conteur],"arr")
+//         //  console.log(conteur,"c++")
+//          conteur++;
+//          console.log(numarr)
+//     }
+//  }
 
  function countDown() {
      for (let i = 5; i >= 0; i--) {
@@ -31,22 +53,24 @@
              if (i === 0) {
                  document.getElementById("counter-to-start").innerText = ``
                  document.getElementById("quz").innerText = ``
-
-                 quizStart(0);
+                  
+                  quizStart(0);
+                  
              }
-         }, (1 - i) * 1000);
+         }, (5 - i) * 1000);
      }
  }
 
  function quizStart(id) {
-
+    console.log(id)
+    // Math.floor(Math.random() * question.length +1)
      document.getElementById("quz").innerHTML = `
         <div id ="" class="" >
             <div id="fil" class="">
-                <div class=""><span id='counter'>${id+1}</span>/10</div>
-                <progress id="prog" value=${id+1} max="10">3</progress>
+                <div class=""><span id='counter'>${conteur1+1}</span>/10</div>
+                <progress id="prog" value=${conteur1+1} max="10">3</progress>
                 </div>
-                <p id="title">Q${id+1}: ${question[id].title}</p>
+                <p id="title">Q ${conteur1+1}: ${question[id].title}</p>
             <form class="" id="form">
             <div><input type="radio" class="qs" id="a"  name="fav"  >
             <label for="a">${question[id].options[0]}</label><br></div>
@@ -56,20 +80,16 @@
             <label for="c">${question[id].options[2]}</label><br>
             <input type="radio" class="qs" id="d"  name="fav"  >
             <label for="d">${question[id].options[3]}</label><br>
-            
             </form>
             <div class="btns" id="switchBtns">
-               ${id==9 ? `<button id="previous" name="button" onclick=recuper(${id});resultat(); quizStart(${id+1}) class="inactive">Résultat</button>` :`<button id="next" onclick=recuper(${id});quizStart(${id+1}) name="button">Suivante</button>`} 
-                
+               ${conteur1==9 ? `<button id="previous" name="button" onclick=recuper(${id});resultat(); class="inactive">Résultat</button>` :`<button id="next" onclick=recuper(${id});quizStart(${id+1}) name="button">Suivante</button>`} 
             </div>
         </div>
-        `;
+        `
+        //console.log(numarr);
+        conteur1++
 }
-
-
-
 function recuper(id) {
-   
     const destts = document.querySelectorAll('.qs');
     destts.forEach(destt => {
             //    console.log(destt.checked)
@@ -89,8 +109,8 @@ function recuper(id) {
             //console.log("errou")
             echac++;
         }
-         console.log(correct)
-         console.log(echac)
+         //console.log(correct)
+         //console.log(echac)
         
 } 
 function resultat(){
