@@ -34,7 +34,7 @@
 
                  quizStart(0);
              }
-         }, (5 - i) * 1000);
+         }, (1 - i) * 1000);
      }
  }
 
@@ -95,16 +95,17 @@ function recuper(id) {
 } 
 function resultat(){
     document.getElementById("quz").innerHTML = 
-    `<div>
-    <div>${Name}</div>
-    <div><p>les réponses correcte est ${correct}</p></div>
-    <div>les réponses fausse ${echac}</div>
-    ${correct>=9 ? `<div><p>mention : Tres bien</p> </div>`:correct>=7 ? `<div><p>mention :  bien</p> </div>`:correct==6?`<div><p>mention : Assez bien</p> </div>`:correct==5?`<div><p>mention : Passable</p> </div>`:`<div><p>mention : rattrapage</p> </div>`}
-    <button id="previous" name="button" onclick=answer() class="inactive">Answers</button>
+    `<div class="resultat">
+    <div class="name">${Name}</div>
+    <div class= "correct"><p>Les réponses correcte est ${correct}</p></div>
+    <div class="fausse">Les réponses fausse est ${echac}</div>
+    ${correct>=9 ? `<div class="mention Tres"><p>mention : Tres bien</p> </div>`:correct>=7 ? `<div class="mention bien"><p>mention :  bien</p> </div>`:correct==6?`<div class="mention assez"><p>mention : Assez bien</p> </div>`:correct==5?`<div class="mention passable"><p>mention : Passable</p> </div>`:`<div class="mention danger"><p>mention : rattrapage</p> </div>`}
+    <div class="btnansr"><button id="ans"  name="button" onclick=answer()>Answers</button></div>
     </div>`;
     
 }
-function answer(){document.getElementById("quz").innerHTML =  `<div><pre>Answers
+function answer(){document.getElementById("quz").innerHTML =  `<div class= "Answers"><pre>
+Answers:
 1) C – The ability to launch instances on demand when needed allows users to launch and terminate instances in
 response to a varying workload. This is a more economical practice than purchasing enough on-premises servers
 to handle the peak load.

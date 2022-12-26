@@ -97,8 +97,41 @@ $color2 :#ffc404;
     .btns {
         @include display(center);
     }
-}
-
+    .resultat{
+        width: 30vw;
+        height: 30vh;
+    .name{
+        @include display(center);
+        align-items: center;
+        background: rgba( 234, 234, 111, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        margin-bottom: 20px;
+        height: 30px;
+    }
+    .correct{
+        @include display(center);
+        color: rgb(8, 243, 8);
+        margin-bottom:20px;
+    }
+    
+    .fausse{
+        @include display(center);
+        color: rgb(255, 74, 74);
+        margin-bottom: 20px;}
+    .mention{
+        @include display(center);
+    }
+    .btnansr{
+        @include display(center);
+    }
+    .Answers{
+        margin-top: 20px;
+    }
+}}
 footer {
     @include display(center);
 }
