@@ -5,7 +5,40 @@ $color2 :#ffc404;
     display: flex;
     justify-content: $o;
 }
-
+.stepper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 23px;
+    .stepper__item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .circle{
+        background: #FFF;
+        height: 30px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        border-radius: 50px;
+        border: 3px solid whitesmoke;
+    }
+    .circle-acitve{
+        border-color: $color2;
+    }
+}
+// line
+.stepper__item:not(:last-child) {
+    flex: 1;
+}
+.stepper__item:not(:last-child):after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: #e0e0e0;
+    margin-inline-end: 0.5rem;
+}
+// -------
 .container {
     width: 100vw;
     box-shadow: 2px 2px 2px rgb(168, 168, 168);

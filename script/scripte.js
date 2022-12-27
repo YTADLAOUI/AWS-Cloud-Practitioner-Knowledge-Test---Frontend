@@ -4,12 +4,17 @@ question.sort(function(){ return Math.random() - 0.5;});
  var numarr;
  let array=[];
  const btnStart = document.querySelector('#btnStart');
+ let step2 = document.querySelector(".step-2");
+ let step1 = document.querySelector(".step-1");
+ let step3 = document.querySelector(".step-3");
+
+
  // console.log(btnNext)
  btnStart.addEventListener('click', quiz);
  // btnNext.addEventListener('click',quizStart);
- let correct = 0;
- let echac   = 0;
- let conteur = 0;
+ let correct  = 0;
+ let echac    = 0;
+ let conteur  = 0;
  let conteur1 = 0;
  function quiz() {
      var fullname = document.getElementById("Fullname").value;
@@ -23,7 +28,10 @@ question.sort(function(){ return Math.random() - 0.5;});
         <h1 class="quiz">Quiz well start in <br><span id="counter-to-start"></span></h1>
         </article>`
         // random();
+        
         countDown();
+        step2.classList.add('circle-acitve');
+        step1.classList.remove('circle-acitve');
      }
  }
 
@@ -122,7 +130,9 @@ function resultat(){
     ${correct>=9 ? `<div class="mention Tres"><p>mention : Tres bien</p> </div>`:correct>=7 ? `<div class="mention bien"><p>mention :  bien</p> </div>`:correct==6?`<div class="mention assez"><p>mention : Assez bien</p> </div>`:correct==5?`<div class="mention passable"><p>mention : Passable</p> </div>`:`<div class="mention danger"><p>mention : rattrapage</p> </div>`}
     <div class="btnansr"><button id="ans"  name="button" onclick=answer()>Answers</button></div>
     </div>`;
-    
+
+        step3.classList.add('circle-acitve');
+        step2.classList.remove('circle-acitve');
 }
 function answer(){document.getElementById("quz").innerHTML =  `<div class= "Answers"><pre>
 Answers:
