@@ -72,7 +72,7 @@ $color2 :#ffc404;
 }
 
 .lance {
-    height: 73vh;
+    min-height: 73vh;
     width: 100%;
     @include display(center);
     align-items: center;
@@ -122,10 +122,12 @@ $color2 :#ffc404;
         color: blue;
         border: 1px solid #ffc404;
         background-color: #fdf6df;
+        margin-bottom: 10px;
     }
     #prog {
         height: 30px;
-        width: 700px;
+        width: 95%;
+        margin-bottom: 10px;
     }
     .btns {
         @include display(center);
@@ -164,7 +166,31 @@ $color2 :#ffc404;
     .Answers{
         margin-top: 20px;
     }
+    .ll{
+        margin-bottom: 10px;
+    }
 }}
+.display{
+    display: flex;
+    align-items: center;}
+
 footer {
     @include display(center);
+    font-size: 0.9rem;
+}
+@media screen and (max-width: 390px){
+    .res{display: none;}
+    h3 {font-size:0.9rem}
+    .global{
+        @include display(center);
+        width: 97%;
+    }
+    .tt{width: 94vw;}
+    .ll{width: 93vw;
+        border: solid 0.5px $color2;
+        background-color: #fae5e5;
+    }
+    #prog{
+        width: 300px;
+    }
 }

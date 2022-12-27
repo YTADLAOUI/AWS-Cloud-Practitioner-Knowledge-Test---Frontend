@@ -14,7 +14,7 @@ question.sort(function(){ return Math.random() - 0.5;});
  // btnNext.addEventListener('click',quizStart);
  let correct  = 0;
  let echac    = 0;
- let conteur  = 0;
+ let conteur  = -1;
  let conteur1 = 0;
  function quiz() {
      var fullname = document.getElementById("Fullname").value;
@@ -66,36 +66,58 @@ question.sort(function(){ return Math.random() - 0.5;});
          }, (5 - i) * 1000);
      }
  }
+//  function countDowns(par) {
+    
+//      for (let i = 30; i >= 0; i--) {
+//          setTimeout(() => {
+//              document.getElementById("countdown").innerText = `${i}`
+//              if (i === 0) {
+//                 document.getElementById("countdown").innerText = ``
+//                   quizStart(par);
+//                   recuper(par-1)
+//              }
+//          }, (30 - i) * 1000);
+//      }
+    
+//  }
+ 
 
  function quizStart(id) {
     console.log(id)
+    num=id
+    //countDowns(num+1)
     // Math.floor(Math.random() * question.length +1)
      document.getElementById("quz").innerHTML = `
+     
         <div id ="" class="" >
             <div id="fil" class="">
                 <div class=""><span id='counter'>${conteur1+1}</span>/10</div>
-                <progress id="prog" value=${conteur1+1} max="10">3</progress>
+                <div class=""global><progress id="prog" value=${conteur1+1} max="10">3</progress></div>
                 </div>
-                <p id="title">Q ${conteur1+1}: ${question[id].title}</p>
+               <div class="global"><p class="tt" id="title">Q ${conteur1+1}: ${question[id].title}</p></div> 
             <form class="" id="form">
-            <div><input type="radio" class="qs" id="a"  name="fav"  >
-            <label for="a">${question[id].options[0]}</label><br></div>
-            <input type="radio" class="qs" id="b"  name="fav"  >
-            <label for="b">${question[id].options[1]}</label><br>
-            <input type="radio" class="qs" id="c"  name="fav"  >
-            <label for="c">${question[id].options[2]}</label><br>
-            <input type="radio" class="qs" id="d"  name="fav"  >
-            <label for="d">${question[id].options[3]}</label><br>
+            <div class="display"><input type="radio" class="qs" id="a"  name="fav"  >
+            <div class="global"><label class="ll" for="a">${question[id].options[0]}</label><br></div></div>
+            <div class="display"><input type="radio" class="qs" id="b"  name="fav"  >
+            <div class="global"><label class="ll" for="b">${question[id].options[1]}</label><br></div></div>
+            <div class="display"><input type="radio" class="qs" id="c"  name="fav"  >
+            <div class="global"><label class="ll" for="c">${question[id].options[2]}</label><br></div></div>
+            <div class="display"><input type="radio" class="qs" id="d"  name="fav"  >
+            <div class="global"><label class="ll" for="d">${question[id].options[3]}</label><br></div></div>
             </form>
             <div class="btns" id="switchBtns">
                ${conteur1==9 ? `<button id="previous" name="button" onclick=recuper(${id});resultat(); class="inactive">Résultat</button>` :`<button id="next" onclick=recuper(${id});quizStart(${id+1}) name="button">Suivante</button>`} 
             </div>
         </div>
         `
+        
+        
+        
         //console.log(numarr);
         conteur1++
 }
 function recuper(id) {
+    
     const destts = document.querySelectorAll('.qs');
     destts.forEach(destt => {
             //    console.log(destt.checked)
@@ -118,6 +140,7 @@ function recuper(id) {
             //console.log("errou")
             echac++;
         }
+        // clearInterval(interval);
          //console.log(correct)
          //console.log(echac) 
 } 

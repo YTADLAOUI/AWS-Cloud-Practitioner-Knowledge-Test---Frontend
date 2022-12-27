@@ -75,7 +75,7 @@
 }
 
 .lance {
-  height: 73vh;
+  min-height: 73vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -129,10 +129,12 @@
   color: blue;
   border: 1px solid #ffc404;
   background-color: #fdf6df;
+  margin-bottom: 10px;
 }
 .lance #prog {
   height: 30px;
-  width: 700px;
+  width: 95%;
+  margin-bottom: 10px;
 }
 .lance .btns {
   display: flex;
@@ -178,8 +180,42 @@
 .lance .resultat .Answers {
   margin-top: 20px;
 }
+.lance .resultat .ll {
+  margin-bottom: 10px;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+}
 
 footer {
   display: flex;
   justify-content: center;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 390px) {
+  .res {
+    display: none;
+  }
+  h3 {
+    font-size: 0.9rem;
+  }
+  .global {
+    display: flex;
+    justify-content: center;
+    width: 97%;
+  }
+  .tt {
+    width: 94vw;
+  }
+  .ll {
+    width: 93vw;
+    border: solid 0.5px #ffc404;
+    background-color: #fae5e5;
+  }
+  #prog {
+    width: 300px;
+  }
 }/*# sourceMappingURL=style.css.map */
