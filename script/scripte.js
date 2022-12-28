@@ -9,6 +9,9 @@ question.sort(function(){ return Math.random() - 0.5;});
  let step2 = document.querySelector(".step-2");
  let step1 = document.querySelector(".step-1");
  let step3 = document.querySelector(".step-3");
+ let votre = [];
+ 
+
  // console.log(btnNext)
  btnStart.addEventListener('click', quiz);
  // btnNext.addEventListener('click',quizStart);
@@ -53,17 +56,17 @@ question.sort(function(){ return Math.random() - 0.5;});
 //     }
 //  }
  function countDown() {
-     for (let i = 5; i >= 0; i--) {
+     for (let i = 1; i >= 0; i--) {
          setTimeout(() => {
              document.getElementById("counter-to-start").innerText = `${i}`
              if (i === 0) {
                  document.getElementById("counter-to-start").innerText = ``
                  document.getElementById("quz").innerText = ``
-                  
+                 //Suivent.style.display="none";
                   quizStart(0);
                   
              }
-         }, (5 - i) * 1000);
+         }, (1 - i) * 1000);
      }
  }
 //  function countDowns(par) {
@@ -78,17 +81,19 @@ question.sort(function(){ return Math.random() - 0.5;});
 //              }
 //          }, (30 - i) * 1000);
 //      }
-    
 //  }
  
 
  function quizStart(id) {
-    console.log(id)
+    //let Suivent = document.querySelector("#next");
+    //console.log(Suivent)
+    //console.log(id)
+    //document.getElementById("countdown").innerText = ``
     num=id
     //countDowns(num+1)
     // Math.floor(Math.random() * question.length +1)
-     document.getElementById("quz").innerHTML = `
-     
+   
+     document.getElementById("quz").innerHTML = `       
         <div id ="" class="" >
             <div id="fil" class="">
                 <div class=""><span id='counter'>${conteur1+1}</span>/10</div>
@@ -97,21 +102,19 @@ question.sort(function(){ return Math.random() - 0.5;});
                <div class="global"><p class="tt" id="title">Q ${conteur1+1}: ${question[id].title}</p></div> 
             <form class="" id="form">
             <div class="display"><input type="radio" class="qs" id="a"  name="fav"  >
-            <div class="global"><label class="ll" for="a">${question[id].options[0]}</label><br></div></div>
+            <div class="global"><label class="ll" for="a">${question[id].options[0].a}</label><br></div></div>
             <div class="display"><input type="radio" class="qs" id="b"  name="fav"  >
-            <div class="global"><label class="ll" for="b">${question[id].options[1]}</label><br></div></div>
+            <div class="global"><label class="ll" for="b">${question[id].options[0].b}</label><br></div></div>
             <div class="display"><input type="radio" class="qs" id="c"  name="fav"  >
-            <div class="global"><label class="ll" for="c">${question[id].options[2]}</label><br></div></div>
+            <div class="global"><label class="ll" for="c">${question[id].options[0].c}</label><br></div></div>
             <div class="display"><input type="radio" class="qs" id="d"  name="fav"  >
-            <div class="global"><label class="ll" for="d">${question[id].options[3]}</label><br></div></div>
+            <div class="global"><label class="ll" for="d">${question[id].options[0].d}</label><br></div></div>
             </form>
             <div class="btns" id="switchBtns">
-               ${conteur1==9 ? `<button id="previous" name="button" onclick=recuper(${id});resultat(); class="inactive">Résultat</button>` :`<button id="next" onclick=recuper(${id});quizStart(${id+1}) name="button">Suivante</button>`} 
+               ${conteur1==9 ? `<button id="previous" name="button" onclick=recuper(${id});resultats(); class="inactive">Résultat</button>` :`<button id="next" class="next" onclick=recuper(${id});quizStart(${id+1}) name="button">Suivante</button>`} 
             </div>
         </div>
         `
-        
-        
         
         //console.log(numarr);
         conteur1++
@@ -125,6 +128,7 @@ function recuper(id) {
                 // console.log(destt.id == question[id].answer, "comparision")
                 // console.log(destt.id, "user")
                 // console.log(question[id].answer, "data")
+                
                 valueRadio=destt.id ;
             }
         }
@@ -135,16 +139,18 @@ function recuper(id) {
             
         } else {
             repenseQ=question[id].repense;
-            console.log(repenseQ);
+
+            //console.log(repenseQ);
             array.push(repenseQ);
             //console.log("errou")
             echac++;
         }
+        //console.log(array)
         // clearInterval(interval);
          //console.log(correct)
          //console.log(echac) 
 } 
-function resultat(){
+function resultats(){
     document.getElementById("quz").innerHTML = 
     `<div class="resultat">
     <div class="name">${Name}</div>
@@ -157,19 +163,15 @@ function resultat(){
         step2.classList.remove('circle-acitve');
 }
 function answer(){
-    document.getElementById("quz").innerHTML =  `
-<div class= "Answers">
-    <div><p>Answers des repenses fausses:</p></div>
-    <div><carte><p>${array[0]==undefined? "":array[0]}</p></carte></div>
-    <div><p>${array[1]==undefined? "":array[1]}</p></div>
-    <div><p>${array[2]==undefined? "":array[2]}</p></div>
-    <div><p>${array[3]==undefined? "":array[3]}</p></div>
-    <div><p>${array[4]==undefined? "":array[4]}</p></div>
-    <div><p>${array[5]==undefined? "":array[5]}</p></div>
-    <div><p>${array[6]==undefined? "":array[6]}</p></div>
-    <div><p>${array[7]==undefined? "":array[7]}</p></div>
-    <div><p>${array[8]==undefined? "":array[8]}</p></div>
-    <div><p>${array[9]==undefined? "":array[9]}</p></div>
-    <button id="previous" name="button" onclick=resultat() class="inactive">Resultat</button>    
-</div>
-`}
+
+    document.getElementById("quz").innerHTML =  ``
+    document.querySelector(".lance").style.display = "none";
+    //     console.log(array,"F")
+    document.querySelector('.tit').innerHTML=`Answers des repenses fausses:`
+    for (let i = 0; i < array.length; i++) {
+        document.querySelector('#results').innerHTML +=  `
+        <div class = "ans">${array[i]}</div>
+        `
+        
+    }
+}

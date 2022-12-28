@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+.containers {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .stepper {
   display: flex;
   flex-wrap: wrap;
@@ -75,12 +80,13 @@
 }
 
 .lance {
-  min-height: 73vh;
+  min-height: 65vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 10px;
 }
 .lance input {
   padding: 12px 20px;
@@ -187,6 +193,24 @@
 .display {
   display: flex;
   align-items: center;
+}
+
+.ans {
+  border: solid 0.5px gray;
+  margin-top: 10px;
+  margin-top: 10px;
+  background-color: rgb(255, 175, 191);
+  box-shadow: 10px 10px 10px;
+}
+
+.tit {
+  margin-top: 2%;
+  color: crimson;
+  margin-left: 2%;
+}
+
+#results {
+  margin: 26px;
 }
 
 footer {

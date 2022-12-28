@@ -5,6 +5,10 @@ $color2 :#ffc404;
     display: flex;
     justify-content: $o;
 }
+.containers{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 .stepper {
     display: flex;
     flex-wrap: wrap;
@@ -72,11 +76,14 @@ $color2 :#ffc404;
 }
 
 .lance {
-    min-height: 73vh;
+    min-height: 65vh;
     width: 100%;
     @include display(center);
     align-items: center;
     flex-direction: column;
+    margin: 10px;
+
+    //align-items: flex-start;
     input {
         padding: 12px 20px;
         margin: 8px 0;
@@ -132,6 +139,7 @@ $color2 :#ffc404;
     .btns {
         @include display(center);
     }
+    
     .resultat{
         width: 30vw;
         height: 30vh;
@@ -169,11 +177,28 @@ $color2 :#ffc404;
     .ll{
         margin-bottom: 10px;
     }
-}}
+
+}
+
+}
 .display{
     display: flex;
     align-items: center;}
-
+    .ans{
+        border: solid 0.5px gray;
+        margin-top: 10px;
+        margin-top: 10px;
+        background-color: rgb(255, 175, 191);
+        box-shadow: 10px 10px 10px ;
+    }
+    .tit{
+        margin-top: 2%;
+        color: crimson;
+        margin-left: 2%;
+        // margin-top: 10px;
+    }
+    #results{    
+        margin: 26px;}
 footer {
     @include display(center);
     font-size: 0.9rem;
