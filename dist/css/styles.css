@@ -193,13 +193,16 @@
 .display {
   display: flex;
   align-items: center;
+  width: 90%;
+  margin-bottom: 1%;
+  padding: 3px;
 }
 
 .ans {
   border: solid 0.5px gray;
   margin-top: 10px;
   margin-top: 10px;
-  background-color: #f3e8c3;
+  background-color: #bbbbbb;
   box-shadow: 10px 10px 10px;
 }
 
@@ -248,4 +251,4 @@ footer {
   #prog {
     width: 300px;
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=styles.css.map */
