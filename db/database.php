@@ -31,18 +31,29 @@ class Database{
     }
     $sqla = "SELECT * FROM answers";
     $exe  = self::conx()->prepare($sqla);
-    $resu=$exe->fetchAll(PDO::FETCH_ASSOC);
+    $exe->execute();
+    $resu = $exe->fetchAll(PDO::FETCH_ASSOC);
     $answer = array();
         foreach($resu as $rows){
       $answer[] = $rows;
-        } 
-        for ($i=0; $i <sizeof($answer) ; $i++) { 
-          # code...
+         } 
+        for ($i=0;$i<sizeof($answer);$i++) { 
+          for($j=0;$j<sizeof($data);$j++){
+              if($data[$j]['id']==$answer[$i]['question_id']){
+                     $data[$j]["options"][]=$answer[$i]['answer'];
+                     if($answer[$i]['correct'] == 1){
+                      $data[$j]["correct"]=$answer[$i]['answer'];
+                     }
+              }
+          }
         }
-        
+    return $data;
   }
 }
-echo "<pre>";
-var_dump(Database::getdata());
-echo "</pre>";
+// echo "<pre>";
+// var_dump(Database::getdata());
+// echo "</pre>";
+
+
+echo json_encode(Database::getdata());
 ?>

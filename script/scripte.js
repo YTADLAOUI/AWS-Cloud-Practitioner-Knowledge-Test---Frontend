@@ -1,3 +1,14 @@
+let question;
+let xhr = new XMLHttpRequest();
+xhr.open("GET", "/AWS-Cloud-Practitioner-Knowledge-Test---Frontend/db/database.php", false);
+xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4 && xhr.status == "200"){
+        question = JSON.parse(xhr.responseText);
+    }
+}
+xhr.send(null);
+console.log(question)
+
 question.sort(function(){ return Math.random() - 0.5;});
  var valueRadio; //stor value
  var Name;
@@ -104,15 +115,15 @@ question.sort(function(){ return Math.random() - 0.5;});
                 <div class=""><span id='counter'>${conteur1+1}</span>/10</div>
                 <div class=""global><progress id="prog" value=${conteur1+1} max="10">3</progress></div>
                 </div>
-               <div class="global"><p class="tt" id="title">Q ${conteur1+1}: ${question[id].title}</p></div> 
+               <div class="global"><p class="tt" id="title">Q ${conteur1+1}: ${question[id].question}</p></div> 
             <div class="display"><input type="radio" class="qs" id="a"  name="fav"  >
-            <div class="global"><label class="ll" for="a">${question[id].options[0].a}</label><br></div></div>
+            <div class="global"><label class="ll" for="a">${question[id].options[0]}</label><br></div></div>
             <div class="display"><input type="radio" class="qs" id="b"  name="fav"  >
-            <div class="global"><label class="ll" for="b">${question[id].options[0].b}</label><br></div></div>
+            <div class="global"><label class="ll" for="b">${question[id].options[1]}</label><br></div></div>
             <div class="display"><input type="radio" class="qs" id="c"  name="fav"  >
-            <div class="global"><label class="ll" for="c">${question[id].options[0].c}</label><br></div></div>
+            <div class="global"><label class="ll" for="c">${question[id].options[2]}</label><br></div></div>
             <div class="display"><input type="radio" class="qs" id="d"  name="fav"  >
-            <div class="global"><label class="ll" for="d">${question[id].options[0].d}</label><br></div></div>
+            <div class="global"><label class="ll" for="d">${question[id].options[3]}</label><br></div></div>
             <div class="btns" id="switchBtns">
                ${conteur1==9 ? `<button id="previous" name="button" onclick=recuper(${id});resultats(); class="inactive">Résultat</button>` :`<button id="next" class="next" onclick=recuper(${id});quizStart(${id+1}) name="button">Suivante</button>`} 
             </div>
