@@ -54,6 +54,7 @@ class Database{
 // var_dump(Database::getdata());
 // echo "</pre>";
 
-
+// echo "<pre>";
 echo json_encode(Database::getdata());
+// echo "</pre>";
 ?>

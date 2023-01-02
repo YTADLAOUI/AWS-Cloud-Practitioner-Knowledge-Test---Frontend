@@ -7,9 +7,9 @@ xhr.onreadystatechange = function(){
     }
 }
 xhr.send(null);
-console.log(question)
-
+//console.log(question)
 question.sort(function(){ return Math.random() - 0.5;});
+
  var valueRadio; //stor value
  var Name;
  //var num;
