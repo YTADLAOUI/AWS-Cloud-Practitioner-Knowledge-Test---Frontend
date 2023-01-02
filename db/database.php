@@ -36,6 +36,9 @@ class Database{
         foreach($resu as $rows){
       $answer[] = $rows;
         } 
+        for ($i=0; $i <sizeof($answer) ; $i++) { 
+          # code...
+        }
         
   }
 }
