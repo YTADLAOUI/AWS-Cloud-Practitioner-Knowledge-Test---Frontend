@@ -1,15 +1,15 @@
 const question = [{
-        title: 'Why is AWS more economical than traditional data centers for applications with varying computeworkloads ?',
-        type: 'radio',
+        title  : 'Why is AWS more economical than traditional data centers for applications with varying computeworkloads ?',
+        type   : 'radio',
         options: [{'a':'Amazon EC2 costs are billed on a monthly basis' , 'b':'Users retain full administrative access to their Amazon EC2 instances', 'c':'Amazon EC2 instances can be launched on demand when needed.', 'd':'Users can permanently run enough instances to handle peak workloads.'}],
-        answer: 'c',
+        answer : 'c',
         repense: "C – The ability to launch instances on demand when needed allows users to launch and terminate instances in response to a varying workload. This is a more economical practice than purchasing enough on-premises servers to handle the peak load."
     },
     {
-        title: 'Which AWS service would simplify the migration of a database to AWS?',
-        type: 'radio',
+        title  : 'Which AWS service would simplify the migration of a database to AWS?',
+        type   : 'radio',
         options: [{'a':'AWS Storage Gateway', 'b':'AWS Database Migration Service (AWS DMS)', 'c':'Amazon EC2', 'd':'Amazon AppStream 2.0'}],
-        answer: 'b',
+        answer : 'b',
         repense:  "B – AWS DMS helps users migrate databases to AWS quickly and securely. The source database remains fully operational during the migration, minimizing downtime to applications that rely on the database. AWS DMS can migrate data to and from most widely used commercial and open-source databases."
     },
     {

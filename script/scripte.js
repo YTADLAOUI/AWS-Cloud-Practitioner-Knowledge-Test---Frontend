@@ -1,8 +1,8 @@
 question.sort(function(){ return Math.random() - 0.5;});
  var valueRadio; //stor value
  var Name;
- var num;
- //var repenseQ;
+ //var num;
+  var repenseQ;
 //  var numarr;
  let array=[];
  const btnStart = document.querySelector('#btnStart');
@@ -10,8 +10,13 @@ question.sort(function(){ return Math.random() - 0.5;});
  let step1 = document.querySelector(".step-1");
  let step3 = document.querySelector(".step-3");
  let votre = [];
+ let vote;
  
-
+// question.forEach((key)=>{
+//     let chirororo = key.options[0];
+//     console.log(Object.entries(chirororo))
+    
+// })
  // console.log(btnNext)
  btnStart.addEventListener('click', quiz);
  // btnNext.addEventListener('click',quizStart);
@@ -100,7 +105,6 @@ question.sort(function(){ return Math.random() - 0.5;});
                 <div class=""global><progress id="prog" value=${conteur1+1} max="10">3</progress></div>
                 </div>
                <div class="global"><p class="tt" id="title">Q ${conteur1+1}: ${question[id].title}</p></div> 
-            <form class="" id="form">
             <div class="display"><input type="radio" class="qs" id="a"  name="fav"  >
             <div class="global"><label class="ll" for="a">${question[id].options[0].a}</label><br></div></div>
             <div class="display"><input type="radio" class="qs" id="b"  name="fav"  >
@@ -109,7 +113,6 @@ question.sort(function(){ return Math.random() - 0.5;});
             <div class="global"><label class="ll" for="c">${question[id].options[0].c}</label><br></div></div>
             <div class="display"><input type="radio" class="qs" id="d"  name="fav"  >
             <div class="global"><label class="ll" for="d">${question[id].options[0].d}</label><br></div></div>
-            </form>
             <div class="btns" id="switchBtns">
                ${conteur1==9 ? `<button id="previous" name="button" onclick=recuper(${id});resultats(); class="inactive">Résultat</button>` :`<button id="next" class="next" onclick=recuper(${id});quizStart(${id+1}) name="button">Suivante</button>`} 
             </div>
@@ -120,7 +123,9 @@ question.sort(function(){ return Math.random() - 0.5;});
         conteur1++
 }
 function recuper(id) {
-    
+    let inputs =document.getElementsByName("fav");
+    console.log(id);
+    console.log(inputs);
     const destts = document.querySelectorAll('.qs');
     destts.forEach(destt => {
             //    console.log(destt.checked)
@@ -128,7 +133,6 @@ function recuper(id) {
                 // console.log(destt.id == question[id].answer, "comparision")
                 // console.log(destt.id, "user")
                 // console.log(question[id].answer, "data")
-                
                 valueRadio=destt.id ;
             }
         }
@@ -138,17 +142,28 @@ function recuper(id) {
             correct++;
             
         } else {
-            repenseQ=question[id].repense;
+            //let v =Object.keys(question[0].options[0]);
+      
+                // console.log(v);
+                // v.forEach(key=>{
+                // if(key=question[0].answer){
 
+                //                         }})
+            
+            console.log(valueRadio);
+            console.log(question[id].options[0].valueRadio);
+            //votre.push(vote);
+            repenseQ=question[id].repense;
             //console.log(repenseQ);
             array.push(repenseQ);
             //console.log("errou")
             echac++;
         }
         //console.log(array)
-        // clearInterval(interval);
          //console.log(correct)
          //console.log(echac) 
+         
+         
 } 
 function resultats(){
     document.getElementById("quz").innerHTML = 
@@ -162,6 +177,7 @@ function resultats(){
         step3.classList.add('circle-acitve');
         step2.classList.remove('circle-acitve');
 }
+
 function answer(){
 
     document.getElementById("quz").innerHTML =  ``

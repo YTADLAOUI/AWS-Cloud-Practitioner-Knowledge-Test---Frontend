@@ -6,7 +6,7 @@
 
 .containers {
   margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .stepper {
@@ -80,13 +80,12 @@
 }
 
 .lance {
-  min-height: 65vh;
+  min-height: 60vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 10px;
 }
 .lance input {
   padding: 12px 20px;
@@ -129,6 +128,7 @@
   display: flex;
   justify-content: center;
   margin-left: 30px;
+  width: 45%;
 }
 .lance #title {
   font-size: 1.1em;
@@ -199,7 +199,7 @@
   border: solid 0.5px gray;
   margin-top: 10px;
   margin-top: 10px;
-  background-color: rgb(255, 175, 191);
+  background-color: #f3e8c3;
   box-shadow: 10px 10px 10px;
 }
 
@@ -220,6 +220,12 @@ footer {
 }
 
 @media screen and (max-width: 390px) {
+  .lance {
+    min-height: 71vh;
+  }
+  .lance #counter-to-start, .lance .quiz {
+    font-size: 1.4rem;
+  }
   .res {
     display: none;
   }
