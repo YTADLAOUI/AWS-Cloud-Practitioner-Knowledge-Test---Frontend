@@ -111,6 +111,7 @@ question.sort(function(){ return Math.random() - 0.5;});
    
      document.getElementById("quz").innerHTML = `       
         <div id ="" class="" >
+        <form action = "script.php" method ="POST">
             <div id="fil" class="">
                 <div class=""><span id='counter'>${conteur1+1}</span>/10</div>
                 <div class=""global><progress id="prog" value=${conteur1+1} max="10">3</progress></div>
@@ -125,8 +126,9 @@ question.sort(function(){ return Math.random() - 0.5;});
             <div class="display"><input type="radio" class="qs" id="d"  name="fav"  >
             <div class="global"><label class="ll" for="d">${question[id].options[3]}</label><br></div></div>
             <div class="btns" id="switchBtns">
-               ${conteur1==9 ? `<button id="previous" name="button" onclick=recuper(${id});resultats(); class="inactive">Résultat</button>` :`<button id="next" class="next" onclick=recuper(${id});quizStart(${id+1}) name="button">Suivante</button>`} 
+               ${conteur1==9 ? `<button id="previous" name="submit" onclick=recuper(${id});resultats(); class="inactive">Résultat</button>` :`<button id="next" class="next" onclick=recuper(${id});quizStart(${id+1}) name="submit">Suivante</button>`} 
             </div>
+        </form>
         </div>
         `
         
@@ -135,20 +137,33 @@ question.sort(function(){ return Math.random() - 0.5;});
 }
 function recuper(id) {
     let inputs =document.getElementsByName("fav");
-    console.log(id);
-    console.log(inputs);
+    //console.log(id);
+    //console.log(inputs);
     const destts = document.querySelectorAll('.qs');
     destts.forEach(destt => {
-            //    console.log(destt.checked)
+              console.log(destt.checked)
             if (destt.checked) {
-                // console.log(destt.id == question[id].answer, "comparision")
-                // console.log(destt.id, "user")
-                // console.log(question[id].answer, "data")
-                valueRadio=destt.id ;
+               switch (destt.id) {
+                case "a":
+                    valueRadio=question[id].options[0];
+                    break;
+                case "b":
+                    valueRadio=question[id].options[1];
+                    break;
+                case "c":
+                    valueRadio=question[id].options[2];
+                    break;
+                case "d":
+                    valueRadio=question[id].options[3];
+                    break;
+               
+                default:
+                    break;
+               }
             }
         }
         )
-        if (valueRadio == question[id].answer) {
+        if (valueRadio == question[id].correct) {
             //console.log("yes")
             correct++;
             
@@ -161,10 +176,10 @@ function recuper(id) {
 
                 //                         }})
             
-            console.log(valueRadio);
-            console.log(question[id].options[0].valueRadio);
+            //console.log(valueRadio);
+            //console.log(question[id].options[0].valueRadio);
             //votre.push(vote);
-            repenseQ=question[id].repense;
+            repenseQ=question[id].explication;
             //console.log(repenseQ);
             array.push(repenseQ);
             //console.log("errou")
@@ -172,9 +187,7 @@ function recuper(id) {
         }
         //console.log(array)
          //console.log(correct)
-         //console.log(echac) 
-         
-         
+         //console.log(echac)  
 } 
 function resultats(){
     document.getElementById("quz").innerHTML = 
