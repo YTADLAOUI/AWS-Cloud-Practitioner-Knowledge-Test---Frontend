@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.containers {
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+.stepper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 23px;
+}
+.stepper .stepper__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.stepper .circle {
+  background: #FFF;
+  height: 30px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  border: 3px solid whitesmoke;
+}
+.stepper .circle-acitve {
+  border-color: #ffc404;
+}
+
+.stepper__item:not(:last-child) {
+  flex: 1;
+}
+
+.stepper__item:not(:last-child):after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: #e0e0e0;
+  -webkit-margin-end: 0.5rem;
+          margin-inline-end: 0.5rem;
+}
+
+.container {
+  width: 100vw;
+  box-shadow: 2px 2px 2px rgb(168, 168, 168);
+}
+.container .breadcrumbs {
+  display: flex;
+  justify-content: space-between;
+}
+.container .logo {
+  width: 80px;
+  height: 80px;
+}
+.container .crumbs {
+  display: flex;
+  align-items: center;
+}
+.container ul {
+  list-style: none;
+  display: flex;
+}
+.container ul a {
+  margin-right: 35px;
+  text-decoration: none;
+  color: #070707;
+}
+
+.training {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  color: #041461;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lance {
+  min-height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.lance input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.lance .siz {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.lance button {
+  background-color: #ffc404;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #070707;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  margin: 5px;
+}
+.lance #alert {
+  color: orangered;
+  font-size: 1.2rem;
+}
+.lance .quiz {
+  font-size: 3rem;
+}
+.lance #counter-to-start {
+  font-size: 4.5rem;
+  display: flex;
+  justify-content: center;
+  color: #ffc404;
+}
+.lance #quz {
+  display: flex;
+  justify-content: center;
+  margin-left: 30px;
+  width: 45%;
+}
+.lance #title {
+  font-size: 1.1em;
+  color: blue;
+  border: 1px solid #ffc404;
+  background-color: #fdf6df;
+  margin-bottom: 10px;
+}
+.lance #prog {
+  height: 30px;
+  width: 95%;
+  margin-bottom: 10px;
+}
+.lance .btns {
+  display: flex;
+  justify-content: center;
+}
+.lance .resultat {
+  width: 30vw;
+  height: 30vh;
+}
+.lance .resultat .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(234, 234, 111, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin-bottom: 20px;
+  height: 30px;
+}
+.lance .resultat .correct {
+  display: flex;
+  justify-content: center;
+  color: rgb(8, 243, 8);
+  margin-bottom: 20px;
+}
+.lance .resultat .fausse {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 74, 74);
+  margin-bottom: 20px;
+}
+.lance .resultat .mention {
+  display: flex;
+  justify-content: center;
+}
+.lance .resultat .btnansr {
+  display: flex;
+  justify-content: center;
+}
+.lance .resultat .Answers {
+  margin-top: 20px;
+}
+.lance .resultat .ll {
+  margin-bottom: 10px;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 1%;
+  padding: 3px;
+}
+
+.ans {
+  border: solid 0.5px gray;
+  margin-top: 10px;
+  margin-top: 10px;
+  background-color: #faf3e0;
+  box-shadow: 10px 10px 10px;
+}
+
+.tit {
+  margin-top: 2%;
+  color: crimson;
+  margin-left: 2%;
+}
+
+#results {
+  margin: 26px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 390px) {
+  .lance {
+    min-height: 71vh;
+  }
+  .lance #counter-to-start, .lance .quiz {
+    font-size: 1.4rem;
+  }
+  .res {
+    display: none;
+  }
+  h3 {
+    font-size: 0.9rem;
+  }
+  .global {
+    display: flex;
+    justify-content: center;
+    width: 97%;
+  }
+  .tt {
+    width: 94vw;
+  }
+  .ll {
+    width: 93vw;
+    border: solid 0.5px #ffc404;
+    background-color: #fae5e5;
+  }
+  #prog {
+    width: 300px;
+  }
+}/*# sourceMappingURL=style.css.map */

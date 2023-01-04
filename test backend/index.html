@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <!-- <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+    <title>quizz</title>
+</head>
+<body>
+    <header>
+        <div class="container ">
+            <nav class="breadcrumbs" >
+                <div class="logo-container">
+                    <img class="logo" src="img/Nouveau projet.png" alt="logo">
+                </div>
+                <div class="crumbs">
+                    <ul>
+                        <li> 
+                            <a href="#">Contact-nous</a>
+                        </li>
+                        <li>
+                            <a href="#">Support</a>
+                        </li>
+                        <li> 
+                            <a href="#">Aide</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </div>      
+    </header>
+    <section>
+        <div class="training">
+            <div class="res"><h3>Training and<br>certification</h3></div>
+            <h3>AWS Certified Cloud Practitioner <br> Sample Questions</h3>
+        </div> 
+        <!-- ================== stepper  ================== -->
+        <div class="containers">
+
+            <ol class="stepper">
+              <li class=" stepper__item">
+                  <h7 class="circle circle-acitve stepper__title step-1" id="circle-acitve">Step 1</h7>
+                  <!-- <p class="c-stepper__desc">Some desc text</p> -->
+              </li>
+              <!-- Other steps -->
+                <li class="stepper__item">
+                    <h7 class="circle stepper__title step-2">Step 2</h7>
+                    <!-- <p class="c-stepper__desc">Some desc text</p> -->
+                </li>
+            <li class="stepper__item">
+              <h7 class="circle stepper__title step-3">Step 3</h7>
+              <!-- <p class="c-stepper__desc">Some desc text</p> -->
+          </li>
+          </ol>
+          </div>
+          <div id="countdown"></div>
+            <!-- ================== Start Test ================== -->
+        <div class="lance">
+            <h5>Entre Full name</h5>
+            <div class="siz">
+                <input id="Fullname" type="text">
+            </div>
+            <div>
+                <button id="btnStart" >Start Quiz!</button>
+            </div>
+            <div id="alert"></div>
+        </div> 
+    </section>
+    <div class="tit"></div>
+    <div id="results">
+
+    </div>
+    <footer>
+    <h6>© 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved | aws.amazon.com </h6>
+    </footer>
+        <!-- ================== BEGIN core-js ================== -->
+        <!-- <script src="script/data.js"></script> -->
+        <script src="script/scripte.js"></script>
+</body>
+</html>
